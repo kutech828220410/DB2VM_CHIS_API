@@ -116,13 +116,13 @@ namespace DB2VM
                     soap.Append("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
                     soap.Append("<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">");
                     soap.Append("<soap:Body>");
-                    soap.Append("<GetCodeCTL_XML  xmlns=\"http://tempuri.org/\">");
+                    soap.Append("<GetCodeCTLI_XML  xmlns=\"http://tempuri.org/\">");
                     soap.Append($"<print_barcode>{BarCode}</print_barcode>");
-                    soap.Append("</GetCodeCTL_XML >");
+                    soap.Append("</GetCodeCTLI_XML >");
                     soap.Append("</soap:Body>");
                     soap.Append("</soap:Envelope>");
-                    string Xml = Basic.Net.WebServicePost("http://192.168.163.69/TmhtcAdcWS/Service.asmx?op=GetCodeCTL_XML", soap);
-                    GetCodeCTL_XML(Xml, ref returnData);
+                    string Xml = Basic.Net.WebServicePost("http://192.168.163.69/TmhtcAdcWS/Service.asmx?op=GetCodeCTLI_XML", soap);
+                    GetCodeCTLI_XML(Xml, ref returnData);
                     returnData.TimeTaken = myTimerBasic.ToString();
                     return returnData.JsonSerializationt(true);
                 }
@@ -505,10 +505,10 @@ namespace DB2VM
             returnData.Result = $"取得醫令成功,共{orderClasses.Count}筆資料,新增{orderClasses_add.Count}筆資料";
 
         }
-        public void GetCodeCTL_XML(string Xml, ref returnData returnData)
+        public void GetCodeCTLI_XML(string Xml, ref returnData returnData)
         {
-            string[] Node_array_pat = new string[] { "soap:Body", "GetCodeCTL_XMLResponse", "GetCodeCTL_XMLResult", "data", "pat" };
-            string[] Node_array_drug = new string[] { "soap:Body", "GetCodeCTL_XMLResponse", "GetCodeCTL_XMLResult", "data", "pat", "drug" };
+            string[] Node_array_pat = new string[] { "soap:Body", "GetCodeCTLI_XMLResponse", "GetCodeCTLI_XMLResult", "data", "pat" };
+            string[] Node_array_drug = new string[] { "soap:Body", "GetCodeCTLI_XMLResponse", "GetCodeCTLI_XMLResult", "data", "pat", "drug" };
             XmlElement xmlElement = Xml.Xml_GetElement(Node_array_pat);
             if (xmlElement == null)
             {
