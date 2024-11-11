@@ -63,6 +63,7 @@ namespace DB2VM.Controller
             string control_level = xmlElement.Xml_GetInnerXml("control_level");
             string anesthesia = xmlElement.Xml_GetInnerXml("anesthesia");
             string url = xmlElement.Xml_GetInnerXml("url");
+            string danger = xmlElement.Xml_GetInnerXml("danger");
             medClass _medClass = medClass.get_med_clouds_by_code("http://127.0.0.1:4433", prs_id);
             if(_medClass == null)
             {
@@ -81,6 +82,9 @@ namespace DB2VM.Controller
             _medClass.藥品學名 = prs_sc_name.Trim();
             _medClass.類別 = med_type.Trim();
             _medClass.包裝單位 = prs_srv_unit.Trim();
+            _medClass.警訊藥品 = (danger == "Y") ? "True" : "False";
+
+
             if (!(control_level == "1"
             || control_level == "2"
             || control_level == "3"
@@ -104,6 +108,7 @@ namespace DB2VM.Controller
         {
             returnData returnData = new returnData();
             List<medClass> medClasses = medClass.get_med_cloud("http://127.0.0.1:4433");
+            List<Task> tasks = new List<Task>();
             for (int i = 0; i < medClasses.Count; i++)
             {
                 Get(medClasses[i].藥品碼);

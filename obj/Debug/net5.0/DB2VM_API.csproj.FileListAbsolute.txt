@@ -872,3 +872,8 @@ C:\Users\Administrator\Desktop\DBVM\obj\Debug\net5.0\DB2VM_API.dll
 C:\Users\Administrator\Desktop\DBVM\obj\Debug\net5.0\ref\DB2VM_API.dll
 C:\Users\Administrator\Desktop\DBVM\obj\Debug\net5.0\DB2VM_API.pdb
 C:\Users\Administrator\Desktop\DBVM\obj\Debug\net5.0\DB2VM_API.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\DBVM\bin\Debug\net5.0\batch_his_medupdate\bin\Debug\net5.0\batch_his_medupdate.deps.json
+C:\Users\Administrator\Desktop\DBVM\bin\Debug\net5.0\batch_his_medupdate\bin\Debug\net5.0\batch_his_medupdate.runtimeconfig.dev.json
+C:\Users\Administrator\Desktop\DBVM\bin\Debug\net5.0\batch_his_medupdate\bin\Debug\net5.0\batch_his_medupdate.runtimeconfig.json
+C:\Users\Administrator\Desktop\DBVM\bin\Debug\net5.0\batch_his_medupdate\obj\batch_his_medupdate.csproj.nuget.dgspec.json
+C:\Users\Administrator\Desktop\DBVM\bin\Debug\net5.0\batch_his_medupdate\obj\project.assets.json
