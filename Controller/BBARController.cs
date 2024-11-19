@@ -283,17 +283,17 @@ namespace DB2VM
         }
 
         // 計算字串乘積的函式
-        static int CalculateProduct(string input)
+        static double CalculateProduct(string input)
         {
             // 使用 Split 方法將字串分割
             string[] parts = input.Split('/');
 
             // 將分割出的字串轉換成整數
-            int num1 = int.Parse(parts[0]);
-            int num2 = int.Parse(parts[1]);
+            double num1 = double.Parse(parts[0]);
+            double num2 = double.Parse(parts[1]);
 
             // 返回計算結果
-            return num1 * num2;
+            return (double)Math.Ceiling(num1 / num2);
         }
 
         public void GetCodeOE_XML(string Xml ,ref returnData returnData)
