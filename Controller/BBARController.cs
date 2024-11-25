@@ -293,7 +293,7 @@ namespace DB2VM
             double num2 = double.Parse(parts[1]);
 
             // 返回計算結果
-            return (double)Math.Ceiling(num1 / num2);
+            return (double)num1 / num2;
         }
 
         public void GetCodeOE_XML(string Xml ,ref returnData returnData)
@@ -612,6 +612,7 @@ namespace DB2VM
                     orderClass.單次劑量 = drug_uqty;
                     orderClass.頻次 = drug_way1;
                     orderClass.途徑 = drug_way2;
+                    double temp = CalculateProduct(drug_qty);
                     orderClass.交易量 = (CalculateProduct(drug_qty) * -1).ToString();
                     orderClass.狀態 = "未過帳";
 
